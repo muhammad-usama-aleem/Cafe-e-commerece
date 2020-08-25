@@ -73,23 +73,24 @@ export default class RoomProvider extends Component {
       let images = item.fields.images.map(image => image.fields.file.url);
 
       let room = { ...item.fields, images, id };
-      console.log(room);
+      // console.log(room);
       return room;
     });
-    console.log(tempItems);
+    // console.log(tempItems);
     return tempItems;
   }
   getRoom = slug => {
     let tempRooms = [...this.state.rooms];
     const room = tempRooms.find(room => room.slug === slug);
+    console.log(room, "room");
+    console.log(tempRooms)
     return room;
   };
   handleChange = event => {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-    console.log(name, value);
-
+   
     this.setState(
       {
         [name]: value

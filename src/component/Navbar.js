@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import logo from "../images/logo.svg";
-import { FaAlignRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { FaAlignRight } from "react-icons/fa";
+import logo from "../images/logo.svg";
 export default class Navbar extends Component {
   state = {
-    isOpen: false,
+    isOpen: false
   };
-  handletoggle = () => {
+  handleToggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
@@ -16,12 +15,12 @@ export default class Navbar extends Component {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="Beach Resort" />
             </Link>
             <button
               type="button"
               className="nav-btn"
-              onClick={this.handletoggle}
+              onClick={this.handleToggle}
             >
               <FaAlignRight className="nav-icon" />
             </button>
