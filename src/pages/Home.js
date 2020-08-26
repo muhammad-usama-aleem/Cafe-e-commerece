@@ -1,20 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Hero from "../component/Hero";
 import Banner from "../component/Banner";
 import Services from "../component/Services";
-import { Link } from "react-router-dom";
 import FeaturedRooms from "../component/FeaturedRooms";
-
-export default function Home() {
+const home = () => {
   return (
     <>
       <Hero>
         <Banner
-          title="Luxurious rooms"
+          title="luxurious rooms"
           subtitle="deluxe rooms starting at $299"
         >
           <Link to="/rooms" className="btn-primary">
-            OUR ROOMS
+            our rooms
           </Link>
         </Banner>
       </Hero>
@@ -22,4 +21,6 @@ export default function Home() {
       <FeaturedRooms />
     </>
   );
-}
+};
+
+export default home;
