@@ -3,7 +3,7 @@ import defaultBcg from "../images/room-1.jpeg";
 import Hero from "../component/Hero";
 import Banner from "../component/Banner";
 import { Link } from "react-router-dom";
-import { RoomContext } from "../context";
+import { RoomContext, RoomProvider } from "../context";
 
 import StyledHero from "../component/StyledHero";
 export default class SingleRoom extends Component {
@@ -11,18 +11,19 @@ export default class SingleRoom extends Component {
     super(props);
     console.log(this.props);
     this.state = {
-      slug: this.props.match.params.slug,
+      slug: this.props.match.params.slot,
       defaultBcg: defaultBcg
     };
   }
   static contextType = RoomContext;
 
-  // componentDidMount() {
-  //   console.log(this.props);
-  // }
+  // componentDidMount() {}
   render() {
     const { getRoom } = this.context;
+    // console.log(getRoom)
+    // console.log("namee", this.state.slug);
     const room = getRoom(this.state.slug);
+    // console.log('room', room);
 
     if (!room) {
       return (
