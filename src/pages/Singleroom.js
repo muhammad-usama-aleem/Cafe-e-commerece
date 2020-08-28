@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import defaultBcg from "../images/room-1.jpeg";
-import Hero from "../component/Hero";
+// import Hero from "../component/Hero";
 import Banner from "../component/Banner";
 import { Link } from "react-router-dom";
-import { RoomContext, RoomProvider } from "../context";
+import { RoomContext } from "../context";
 
 import StyledHero from "../component/StyledHero";
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
     this.state = {
       slug: this.props.match.params.slot,
       defaultBcg: defaultBcg
@@ -17,13 +17,9 @@ export default class SingleRoom extends Component {
   }
   static contextType = RoomContext;
 
-  // componentDidMount() {}
   render() {
     const { getRoom } = this.context;
-    // console.log(getRoom)
-    // console.log("namee", this.state.slug);
     const room = getRoom(this.state.slug);
-    // console.log('room', room);
 
     if (!room) {
       return (
@@ -46,12 +42,13 @@ export default class SingleRoom extends Component {
       pets,
       images
     } = room;
-    const [main, ...defaultImages] = images;
-    console.log(defaultImages);
+    // const [...defaultImages] = images;
+    
 
     return (
       <>
         <StyledHero img={images[0] || this.state.defaultBcg}>
+          
           <Banner title={`${name} room`}>
             <Link to="/rooms" className="btn-primary">
               back to rooms
@@ -60,7 +57,8 @@ export default class SingleRoom extends Component {
         </StyledHero>
         <section className="single-room">
           <div className="single-room-images">
-            {defaultImages.map((item, index) => (
+            
+            {images.map((item, index) => (
               <img key={index} src={item} alt={name} />
             ))}
           </div>

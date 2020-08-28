@@ -79,17 +79,15 @@ export default class RoomProvider extends Component {
   }
   getRoom = (slug) => {
     let tempRooms = [...this.state.rooms];
-    console.log('tempRooms', tempRooms);
-    console.log('slug', slug);
     const room = tempRooms.find(room => room.slug === slug);
-    console.log('room', room);
     return room;
   };
   handleChange = event => {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-    // console.log(name, value);
+    console.log('name:', name, "value:", value);
+    console.log("event.target.type", event.target.type)
 
     this.setState(
       {
@@ -156,6 +154,7 @@ export default class RoomProvider extends Component {
   }
 }
 const RoomConsumer = RoomContext.Consumer;
+// console.log("RoomConsumer",RoomConsumer)
 
 export { RoomProvider, RoomConsumer, RoomContext };
 
