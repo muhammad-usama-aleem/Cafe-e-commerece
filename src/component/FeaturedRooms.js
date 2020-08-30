@@ -6,6 +6,10 @@ import Loading from "./Loading";
 export default class FeaturedRooms extends Component {
   static contextType = RoomContext;
 
+  componentDidMount()
+  {
+    console.log(this.context);
+  }
   render() {
     let { loading, featuredRooms: rooms } = this.context;
 

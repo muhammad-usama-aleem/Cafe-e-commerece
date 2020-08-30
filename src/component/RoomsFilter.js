@@ -23,6 +23,7 @@ const RoomsFilter = ({ rooms }) => {
     breakfast,
     pets
   } = context;
+  console.log("type", type);
 
   // get unique types
   let types = getUnique(rooms, "type");
@@ -116,7 +117,7 @@ const RoomsFilter = ({ rooms }) => {
               type="checkbox"
               name="breakfast"
               id="breakfast"
-              checked={breakfast}
+              // checked={breakfast}
               onChange={handleChange}
             />
             <label htmlFor="breakfast">breakfast</label>
@@ -125,7 +126,7 @@ const RoomsFilter = ({ rooms }) => {
             <input
               type="checkbox"
               name="pets"
-              checked={pets}
+              // checked={pets}
               onChange={handleChange}
             />
             <label htmlFor="breakfast">pets</label>
