@@ -19,9 +19,7 @@ const RoomsFilter = ({ rooms }) => {
     minPrice,
     maxPrice,
     minSize,
-    maxSize,
-    breakfast,
-    pets
+    maxSize
   } = context;
   console.log("type", type);
 
