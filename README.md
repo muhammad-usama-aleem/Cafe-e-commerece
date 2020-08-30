@@ -1,8 +1,8 @@
 ## React-Hotel-Rooms-E-Commerece 
 
 Speciality of this project is:
-
---Content API
---React-Router-Dom
---Styled-components
+<br/>
+--Content API<br/>
+--React-Router-Dom<br/>
+--Styled-components<br/>
 
